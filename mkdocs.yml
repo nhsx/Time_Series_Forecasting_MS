@@ -1,0 +1,31 @@
+site_name: Time Series Forecasting Documentation
+
+nav:
+  - Home: index.md
+  - Models: 
+    - SARIMA: sarimax.md
+    - Prophet: prophet.md
+  - Pipeline : py_files/pipeline_dummy.ipynb
+
+#  - Python file: Packages/Packages.py
+
+plugins:
+  - mkdocs-jupyter:
+     execute: false
+
+#- mkdocstrings:
+#    handlers:
+#      python:
+#        paths: [..]
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+watch:
+  - src
