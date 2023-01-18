@@ -37,7 +37,7 @@ To get a local copy up and running follow these simple steps.
 
 To clone the repo:
 
-`git clone https://github.com/nhsx/Forecasting_MS
+`git clone https://github.com/nhsx/Forecasting_MS.
 
 To create a suitable environment:
 - ```python3.8 -m venv ~/venv/py3.8```
