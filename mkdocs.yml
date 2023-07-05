@@ -8,7 +8,8 @@ nav:
   - Pipeline : py_files/pipeline_dummy.ipynb
 
 #  - Python file: Packages/Packages.py
-
+theme:
+  name: material
 plugins:
   - mkdocs-jupyter:
      execute: false

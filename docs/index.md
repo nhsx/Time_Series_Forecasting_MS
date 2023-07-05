@@ -1,17 +1,5 @@
-# Welcome to MkDocs
+> Warning - Code in Development
 
-For full documentation please visit [mkdocs.org](https://www.mkdocs.org).
+# Welcome
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+This code aims to be a foundation for forecasting comparison work which has developed off the back of a short term project developed by [Milan Storey](https://github.com/MilanStorey) whilst on DDaT placement with the NHS England Digital Analysis and Research Team (DART) in Nov/Dec 2023.
