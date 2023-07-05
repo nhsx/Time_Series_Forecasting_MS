@@ -1,0 +1,552 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../prophet/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.1">
+    
+    
+      
+        <title>SARIMA - Time Series Forecasting Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.402914a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-model" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Time Series Forecasting Documentation" class="md-header__button md-logo" aria-label="Time Series Forecasting Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Time Series Forecasting Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SARIMA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Time Series Forecasting Documentation" class="md-nav__button md-logo" aria-label="Time Series Forecasting Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Time Series Forecasting Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Models
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Models
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          SARIMA
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        SARIMA
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-model" class="md-nav__link">
+    The Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-a-series-stationary" class="md-nav__link">
+    Making a series stationary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelling-a-stationary-series" class="md-nav__link">
+    Modelling a stationary series
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-the-fit-of-the-model" class="md-nav__link">
+    Checking the fit of the model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-final-model" class="md-nav__link">
+    The final model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-we-expect-this-model-to-outperform-a-simple-model" class="md-nav__link">
+    Do we expect this model to outperform a simple model?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-far-ahead-can-we-forecast-with-this-model" class="md-nav__link">
+    How far ahead can we forecast with this model?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-will-sarima-models-work-well" class="md-nav__link">
+    When will SARIMA models work well?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    Further Reading
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prophet/" class="md-nav__link">
+        Prophet
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../py_files/pipeline_dummy/" class="md-nav__link">
+        Pipeline
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-model" class="md-nav__link">
+    The Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-a-series-stationary" class="md-nav__link">
+    Making a series stationary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modelling-a-stationary-series" class="md-nav__link">
+    Modelling a stationary series
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checking-the-fit-of-the-model" class="md-nav__link">
+    Checking the fit of the model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-final-model" class="md-nav__link">
+    The final model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#do-we-expect-this-model-to-outperform-a-simple-model" class="md-nav__link">
+    Do we expect this model to outperform a simple model?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-far-ahead-can-we-forecast-with-this-model" class="md-nav__link">
+    How far ahead can we forecast with this model?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-will-sarima-models-work-well" class="md-nav__link">
+    When will SARIMA models work well?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-reading" class="md-nav__link">
+    Further Reading
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>SARIMA</h1>
+
+<h2 id="the-model">The Model</h2>
+<p>ARMA (Autoregressive Moving Average) models are of the form:</p>
+<div class="arithmatex">\[ X_{t} = \phi_{1}X_{t-1} + ... + \phi_{p}X_{t-p} +
+\theta_{1}\epsilon_{t-1} + ... + \theta_{q}\epsilon_{t-q} + \epsilon_{t}, \; \; \; \epsilon_{t} \sim \mathcal{N}(0, \sigma), \; i.i.d\]</div>
+<p>The <span class="arithmatex">\(X\)</span> terms are called the autoregressive terms and the <span class="arithmatex">\(\epsilon\)</span> terms the moving average terms.</p>
+<p>This models says that the value of the system today is a function of the systems historic values as well as the random jolts the system has experienced in the past.</p>
+<p>An additional constraint on ARMA models is that they must be stationary. Loosely this means the properties of the time series don't change over time. In particular the time series must not exhibit any sustained trend. </p>
+<h2 id="making-a-series-stationary">Making a series stationary</h2>
+<p>Let's take the primary care weekly time series as an example. Although ultimately we're after monthly forecasts, a weekly model can be more dynamic. For example, we can use a 4 week ahead forecast to get an approximate 1 month out forecast. But then when 1 week of new data comes in, we can use a 3 week ahead forecast to update our monthly prediction. With a monthly model we are stuck with our 1 month ahead forecast.</p>
+<p>Clearly the raw data exhibits some trend, so is non-stationary:</p>
+<p><img alt="alt text" src="acf_pacf_plots/UsersAppointmentsBooked_weekly_ts.png" /></p>
+<p>Differencing is required to induce stationarity. Differencing just means looking at the jumps between points in time instead of the points in time specifically. That is, instead of trying to model <span class="arithmatex">\(X_{t}\)</span>, we model <span class="arithmatex">\(Y_{t} = X_{t} - X_{t-52}\)</span>. A lag of 52 has been chosen as there looks to be some yearly seasonality in the time series. Differencing with a lag of <span class="arithmatex">\(52\)</span> will knock out the seasonal pattern. </p>
+<p><img alt="alt text" src="../acf_pacf_plots/UsersAppointmentsBooked_weekly_ts_diff_52.png" /></p>
+<p>There is no more seasonality in the data, but there still looks to be some downward trend present (although the most recent data suggests this may be stabalising). We will apply one further round of differencing and consider <span class="arithmatex">\(Z_{t} = Y_{t} - Y_{t-1}\)</span>.</p>
+<p><img alt="alt text" src="../acf_pacf_plots/UsersAppointmentsBooked_weekly_ts_diff_52_1.png" /></p>
+<p>When differencing has been applied we say the series has been integrated. This is what the 'I' standands for in ARIMA. </p>
+<h2 id="modelling-a-stationary-series">Modelling a stationary series</h2>
+<p>The series <span class="arithmatex">\(Z_{t}\)</span> exhibits no clear trend. This is only a necessary condition for stationarity but may not be sufficient. Note that the variance in this series doesn't appear uniform in magnitude. An assumption of the ARIMA model was that the jolts to the system (the <span class="arithmatex">\(\epsilon\)</span>'s) each share the same variance <span class="arithmatex">\(\sigma\)</span>. This assumption may be violated by this series. Sometimes however, these modelling assumptions can be violated and still produce reasonable forecasts so don't throw the model away just because this constant variance assumption isn't completely met.</p>
+<p>The values of <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> may be selected via analysis of the 'acf' and 'pacf' plots. Autocorrelation function (acf) plots show how correlated points separated by a lag of k are with one another. So the k'th spike in the acf plot is given by <span class="arithmatex">\(corr(Z_{t-k}, Z_{t})\)</span>. Partial autocorrelation function plots show how correlated points separated by a lag of k are, given we have accounted for the intermediary effects of <span class="arithmatex">\(Z_{t-1},...,Z_{t-(k-1)}\)</span>. It may be shown that the link between the parameters <span class="arithmatex">\(p\)</span> and <span class="arithmatex">\(q\)</span> and these plots is given by:</p>
+<p><img alt="alt text" src="../acf_pacf_plots/The-model-identification-from-ACF-and-PACF-plots.png" /></p>
+<p>Below are the plots for our series <span class="arithmatex">\(Z_{t}\)</span>.</p>
+<p><img alt="alt text" src="../acf_pacf_plots/UsersAppointmentsBooked_series_acf.png" /></p>
+<p><img alt="alt text" src="../acf_pacf_plots/UsersAppointmentsBooked_series_pacf.png" /></p>
+<p>The ACF cuts off sharply after lag 1 and the PACF looks to decay. Therefore a MA(1) term seems like a good choice. That is, we suggest a model of the form </p>
+<div class="arithmatex">\[Z_{t} = \epsilon_{t} + \theta_{1} \epsilon_{t-1}\]</div>
+<h2 id="checking-the-fit-of-the-model">Checking the fit of the model</h2>
+<p>Is this model a good fit? If it is, then when we use this model to fit the series <span class="arithmatex">\(Z_{t}\)</span>, we wouldn't expect there to be any indentifiable patterns left in the residuals. Otherwise there's something our model isn't capturing properly in the series. Note, the residuals of the fitted series are just the random jolts <span class="arithmatex">\(\epsilon_{t}\)</span> at each point in time. To see if there are any patterns remaining we plot the acf and pacf of the residuals.</p>
+<p><img alt="alt text" src="../acf_pacf_plots/UsersAppointmentsBooked_residual_acf.png" /></p>
+<p><img alt="alt text" src="../acf_pacf_plots/UsersAppointmentsBooked_residual_pacf.png" /></p>
+<p>The correlations now don't look to be significant, so we'll accept the model. </p>
+<h2 id="the-final-model">The final model</h2>
+<p>So we've settled on a model of the form:</p>
+<div class="arithmatex">\[Z_{t} = \epsilon_{t} + \theta_{1} \epsilon_{t-1}\]</div>
+<p>Given <span class="arithmatex">\(Z_{t} = Y_{t} - Y_{t-1}\)</span>, this means our model for <span class="arithmatex">\(Y_{t}\)</span> is</p>
+<div class="arithmatex">\[Y_{t} = Y_{t-1} + \epsilon_{t} + \theta_{1} \epsilon_{t-1}\]</div>
+<p>And given <span class="arithmatex">\(Y_{t} = X_{t} - X_{t-52}\)</span>, this means our model of the original series <span class="arithmatex">\(X_{t}\)</span> is</p>
+<div class="arithmatex">\[X_{t} = X_{t-1} + (X_{t-52} - X_{t-53})  + \epsilon_{t} + \theta_{1} \epsilon_{t-1}\]</div>
+<p>Because we have a seasonal component to our model (the <span class="arithmatex">\(X_{t-52}\)</span> term), we called this a seasonal ARIMA model, or SARIMA for short.</p>
+<h2 id="do-we-expect-this-model-to-outperform-a-simple-model">Do we expect this model to outperform a simple model?</h2>
+<p>Note the autoregressive part of this model just says that where we are this week is where we were last week, plus the jump between the same points in time last year! So the selected model is just a very simple additive model with an additional lagged moving average term. Given this, we might not expect loads of improvement over a simple additive model without the moving average terms. Furthermore if we were to forecast 4 weeks out with this model we get:</p>
+<div class="arithmatex">\[\overline{X}_{t+1} = X_{t} + (X_{t-51} - X_{t-52})+ \theta_{1}\epsilon_{t}\]</div>
+<div class="arithmatex">\[\overline{X}_{t+2} = \overline{X}_{t+1} + (X_{t-50} - X_{t-51})\]</div>
+<div class="arithmatex">\[\overline{X}_{t+3} = \overline{X}_{t+2} + (X_{t-49} - X_{t-50})\]</div>
+<div class="arithmatex">\[\overline{X}_{t+4} = \overline{X}_{t+3} + (X_{t-48} - X_{t-49})\]</div>
+<p>Since we don't have any way of knowing the error terms in the future as they're assumed to be independent from one another, we have to assume they equal zero. So the inclusion of the lagged moving average term is only really realised in <span class="arithmatex">\(\overline{X}_{t+1}\)</span>. This means when we aggregate up our 4 week out forecast to generate a 1 month out forecast, we can't expect much improvement over the simple additive model.</p>
+<h2 id="how-far-ahead-can-we-forecast-with-this-model">How far ahead can we forecast with this model?</h2>
+<p>Short term forecasts of the model might be reasonable. However, long-term forecasts will get increasingly worse as the trend continues linearly upwards. In reality we would expect some tapering off as app adoption slows.</p>
+<h2 id="when-will-sarima-models-work-well">When will SARIMA models work well?</h2>
+<p>Imagine instead this model applied equally well to the monthly data, then we might expected this SARIMA model to perform a bit better than the simple additive model for a 1 month out forecast. Why? Because we can take advantage of the lagged moving average term in this 1 step ahead forecast. Unfortunately, there just isn't enough data to fit a monthly model. Having too little data can mean more complex patterns may not yet be indentifiable or that the estimates of the <span class="arithmatex">\(\phi\)</span>'s and <span class="arithmatex">\(\theta\)</span>'s may not have converged properly, leading to poor forecasts. However as more data comes in, a monthly SARIMA model may turn out to be a good monthly forecasting tool. Also, with more data, the tapering off of the trend should be more pronounced. SARIMA models are capable of capturing this non-linear trend.</p>
+<p>SARIMA models tend to work better than these simple models when there are more complex patterns in the time series, i.e time series which require multiple <span class="arithmatex">\(\phi\)</span> and <span class="arithmatex">\(\theta\)</span> terms. These series might look less 'structured' and the underlying pattern might be hard to detect visually. In this case the weekly time series looks to have quite a structured trend and seasonality to the data. This is reflected in the simplicity of the chosen model.</p>
+<h2 id="further-reading">Further Reading</h2>
+<p>There are many more thigs to consider when fitting SARIMA models. In particular,</p>
+<ul>
+<li>How do we actually know if our series is stationary rather than just looking stationary?</li>
+<li>How do we account for bank holidays?</li>
+<li>What if there are seasonal spikes in the acf and pacf?</li>
+<li>What if the residual acf and pacf plots still show correlations?</li>
+<li>How do we know whether a term in our chosen model is actually improving predictive performance?</li>
+</ul>
+<p>All of these questions are answered in 'Forecasting with Univariate Box-Jenkins Models - Concepts and Cases' by Alan Pankratz. <a href="https://bayanbox.ir/view/5026844611947961592/Pankratz-Forecasting-with-univariate-Box-Jenkinse-Models.pdf">Click here for a free pdf</a>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b78d2936.min.js"></script>
+      
+        <script src="../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
