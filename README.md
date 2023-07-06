@@ -99,7 +99,7 @@ of the [Open Government 3.0][ogl] licence.
 
 ### Another Forecasting resource
 
-For a simpler look into Forecasting with some beginner workbooks to go through, please see this repo;
+For a simpler look into Forecasting with some beginner workbooks to go through, please see this repo
 _[Forecasting_1](https://github.com/nhsx/Forecasting/tree/main)._
 
 
