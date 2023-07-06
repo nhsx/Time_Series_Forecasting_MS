@@ -97,6 +97,12 @@ of the [Open Government 3.0][ogl] licence.
 [copyright]: http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/
 [ogl]: http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/
 
+### Another Forecasting resource
+
+For a simpler look into Forecasting with some beginner workbooks to go through, please see this repo;
+_[Forecasting_1](https://github.com/nhsx/Forecasting/tree/main)._
+
+
 ### Contact
 
 Primary Contact is Milan Storey (Milan.Storey1@nhs.net). Supervisor is Paul Carroll (Paul.Carroll9@nhs.net).
